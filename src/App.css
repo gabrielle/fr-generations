@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.NewDragon{
+  margin:auto;
+  
+}
+
+.dragonContainer{
+  display:flex;
+  flex-wrap: nowrap;
+}
+
+.dragonContainer > div{
+  text-align: center;
+  width:150px;
+}

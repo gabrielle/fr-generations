@@ -1,42 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBt-3LbMM1bK-4cZPIymfoKV24OfOzm7s4",
-  authDomain: "frdragons.firebaseapp.com",
-  projectId: "frdragons",
-  storageBucket: "frdragons.appspot.com",
-  messagingSenderId: "1006913540176",
-  appId: "1:1006913540176:web:66fc98dad1fad39cd30155",
-  measurementId: "G-74F16NMK9N"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
+import DragonList from './components/DragonList';
+import EditDragon from './components/EditDragon';
+import Layout from './pages/Layout';
+import Main from './pages/Main';
+import AddNew from './pages/add.js';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="/add" element={<AddNew />} />
+          <Route path="edit">
+            <Route path=":dragonId" element={<EditDragon />} />
+          </Route>
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
