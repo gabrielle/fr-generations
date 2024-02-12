@@ -1,3 +1,7 @@
+# FireBase Setup
+https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
