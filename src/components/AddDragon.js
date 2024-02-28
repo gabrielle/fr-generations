@@ -6,7 +6,7 @@ import {db} from "../firebase";
 const AddDragon = () => {
     const [newDragonId, setNewDragonId] = useState("")
     const [newDragonUrl, setNewDragonUrl] = useState("")
-    const [newDragonSex, setNewDragonSex] = useState("")
+    const [newDragonSex, setNewDragonSex] = useState("male")
 
     const addNewDragon = async (e) => {
         e.preventDefault();
